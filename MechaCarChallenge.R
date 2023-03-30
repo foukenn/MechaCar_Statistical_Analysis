@@ -25,6 +25,7 @@ total_summary <- suspension_df %>% summarize(Mean = mean(PSI), Median = median(P
 lots_summary <- suspension_df %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
 
 # T-tests 
+t.test(suspension_df$PSI, mu=1500)
 
 t.test(subset(suspension_df,Manufacturing_Lot=="Lot1")$PSI, mu = 1500)
 t.test(subset(suspension_df,Manufacturing_Lot=="Lot2")$PSI, mu = 1500)
